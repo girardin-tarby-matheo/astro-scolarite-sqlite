@@ -32,8 +32,7 @@ jobs:
 
             /home/etudiant/.bun/bin/bun run build
 
-            sudo -n /bin/systemctl restart scolarite || sudo -n /usr/bin/systemctl restart scolarite
-
-            sudo -n /bin/systemctl is-active --quiet scolarite || sudo -n /usr/bin/systemctl is-active --quiet scolarite
-
+            echo "${{ secrets.SSH_PASSWORD }}" | sudo -S systemctl restart scolarite
+            echo "${{ secrets.SSH_PASSWORD }}" | sudo -S systemctl is-active --quiet scolarite
+            
             curl --fail http://127.0.0.1:3000/
