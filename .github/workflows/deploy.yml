@@ -28,14 +28,14 @@ jobs:
 
             git pull origin main
 
-            /home/etudiant/.bun/bin/bun install
+            bun ci
 
-            /home/etudiant/.bun/bin/bun run build
+            bun run --bun build
 
             echo "Redémarrage de l'application..."
-            echo "${{ secrets.SSH_PASSWORD }}" | sudo -S systemctl restart scolarite
+            sudo systemctl restart scolarite
 
             echo "Vérification du service..."
-            echo "${{ secrets.SSH_PASSWORD }}" | sudo -S systemctl is-active --quiet scolarite
+            sudo systemctl status scolarite
 
-            curl --fail http://127.0.0.1:3000/
+            curl --fail http://localhost:3000/
