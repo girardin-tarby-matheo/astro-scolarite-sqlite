@@ -11,9 +11,7 @@ const teachers = db.prepare("SELECT COUNT(*) count FROM teachers").get();
 ---
 
 <Layout title="Accueil"
-    ><h1>Gestion de la scolarité</h1><p>AstroJS SSR + SQLite.</p><div
-        class="grid"
-    >
+    ><h1>Gestion scolarité</h1><p>AstroJS SSR + SQLite.</p><div class="grid">
         <a class="card" href="/students"
             ><h2>Étudiants</h2><strong>{students.count}</strong></a
         >
