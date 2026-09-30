@@ -1,4 +1,4 @@
-name: Deploy AstroJS
+name: Deploy AstroJS 2
 
 on:
   push:
