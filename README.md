@@ -36,5 +36,4 @@ node ./dist/server/entry.mjs
 
 La base est stockée dans `data/scolarite.db` et n'est pas versionnée.
 
-
-.
+..
